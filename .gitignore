@@ -1,0 +1,56 @@
+# Unity generated folders
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+
+# Visual Studio / MonoDevelop generated files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+
+# Unity auto-generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# Packed Addressables
+*.addressable
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!*.meta
+
+# Uncomment this line if you wish to ignore the asset store tools plugin
+# Assets/AssetStoreTools*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+Thumbs.db
+Desktop.ini
+
+# Rider
+.idea/
+*.sln.iml
