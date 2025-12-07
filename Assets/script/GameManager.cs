@@ -70,6 +70,28 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void BackToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Welcome");
+    }
+
+    public void GoToAfterMatch()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("After-Match");
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void QuitGame()
     {
         Application.Quit();
