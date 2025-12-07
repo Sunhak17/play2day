@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    private bool wasGrounded;
     private float moveInput;
     private bool jumpRequest;
     private int facingDirection = 1; // 1 = right, -1 = left
@@ -25,13 +26,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Ground check
+        wasGrounded = isGrounded;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
         // Get movement input
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        // Detect jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        // Detect jump - only when grounded and not already jumping
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && rb.velocity.y <= 0.1f)
         {
             jumpRequest = true;
         }
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
         // Alternative kick input (not requiring collision)
         if (Input.GetKeyDown(KeyCode.K))
         {
+            Debug.Log("K key pressed - attempting kick");
             TryKickBall();
         }
     }
@@ -75,17 +78,30 @@ public class PlayerController : MonoBehaviour
         if (ballObj != null)
         {
             float distance = Vector2.Distance(transform.position, ballObj.transform.position);
-            if (distance < 2f) // Kick if within 2 units
+            Debug.Log("Ball found! Distance: " + distance);
+            if (distance < 3.5f) // Kick if within 3.5 units (increased range)
             {
                 Rigidbody2D ballRb = ballObj.GetComponent<Rigidbody2D>();
                 if (ballRb != null)
                 {
                     // Kick in the direction player is facing
                     Vector2 kickDirection = new Vector2(facingDirection, 0.3f).normalized;
-                    ballRb.AddForce(kickDirection * 10f, ForceMode2D.Impulse);
+                    ballRb.AddForce(kickDirection * 15f, ForceMode2D.Impulse);
                     Debug.Log("Ball kicked forward!");
                 }
+                else
+                {
+                    Debug.Log("Ball has no Rigidbody2D!");
+                }
             }
+            else
+            {
+                Debug.Log("Ball too far to kick! Distance: " + distance + " (need < 3.5)");
+            }
+        }
+        else
+        {
+            Debug.Log("Ball not found! Check if ball has 'Ball' tag.");
         }
     }
 
