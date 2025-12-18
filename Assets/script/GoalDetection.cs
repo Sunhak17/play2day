@@ -1,29 +1,73 @@
 using UnityEngine;
+using System.Collections;
 
 public class GoalDetection : MonoBehaviour
 {
     public bool isPlayerGoal; // True if this is player's goal (AI scores), False if AI's goal (player scores)
+    public GameObject goalAnimation; // Drag your goal animation GameObject here
+    public float animationDuration = 2f; // Duration to show animation
+
+    private bool isProcessingGoal = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ball"))
+        if (other.CompareTag("Ball") && !isProcessingGoal)
         {
-            if (isPlayerGoal)
-            {
-                // AI scored
-                ScoreManager.instance.AddAIScore();
-                Debug.Log("AI scored!");
-            }
-            else
-            {
-                // Player scored
-                ScoreManager.instance.AddPlayerScore();
-                Debug.Log("Player scored!");
-            }
-
-            // Reset ball position
-            ResetBall(other.gameObject);
+            StartCoroutine(HandleGoal(other.gameObject));
         }
+    }
+
+    IEnumerator HandleGoal(GameObject ball)
+    {
+        isProcessingGoal = true;
+
+        // Stop the ball
+        Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
+        if (ballRb != null)
+        {
+            ballRb.velocity = Vector2.zero;
+            ballRb.angularVelocity = 0f;
+        }
+
+        // Update score
+        if (isPlayerGoal)
+        {
+            // AI scored
+            ScoreManager.instance.AddAIScore();
+            Debug.Log("AI scored!");
+        }
+        else
+        {
+            // Player scored
+            ScoreManager.instance.AddPlayerScore();
+            Debug.Log("Player scored!");
+        }
+
+        // Notify GameManager about goal (for golden goal mode)
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.OnGoalScored();
+        }
+
+        // Show goal animation
+        if (goalAnimation != null)
+        {
+            goalAnimation.SetActive(true);
+        }
+
+        // Wait for animation duration
+        yield return new WaitForSeconds(animationDuration);
+
+        // Hide goal animation
+        if (goalAnimation != null)
+        {
+            goalAnimation.SetActive(false);
+        }
+
+        // Reset ball position
+        ResetBall(ball);
+
+        isProcessingGoal = false;
     }
 
     void ResetBall(GameObject ball)

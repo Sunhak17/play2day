@@ -21,6 +21,8 @@ public class AIPlayer : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private float nextActionTime = 0f;
+    private float lastKickTime = 0f;
+    private float kickCooldown = 1f; // 1 second between kicks
 
     void Start()
     {
@@ -64,15 +66,19 @@ public class AIPlayer : MonoBehaviour
         {
             MoveTowardsBall();
         }
-        // Kick if close enough
+        // Stop and kick if close enough
         else
         {
-            TryKickBall();
+            // Stop moving
+            rb.velocity = new Vector2(0, rb.velocity.y);
             
-            // Random jump when near ball
-            if (isGrounded && Random.value < jumpChance)
+            Debug.Log("AI near ball! Distance: " + distanceToBall + " | Cooldown ready: " + (Time.time >= lastKickTime + kickCooldown));
+            
+            // Try to kick with cooldown
+            if (Time.time >= lastKickTime + kickCooldown)
             {
-                Jump();
+                TryKickBall();
+                lastKickTime = Time.time;
             }
         }
     }
@@ -85,7 +91,11 @@ public class AIPlayer : MonoBehaviour
 
     void TryKickBall()
     {
-        if (ball == null) return;
+        if (ball == null)
+        {
+            Debug.Log("AI: Ball is null!");
+            return;
+        }
         
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         if (ballRb != null)
@@ -102,14 +112,20 @@ public class AIPlayer : MonoBehaviour
             }
             
             ballRb.AddForce(kickDirection * kickForce, ForceMode2D.Impulse);
+            Debug.Log("AI kicked the ball with force: " + kickForce);
+        }
+        else
+        {
+            Debug.Log("AI: Ball has no Rigidbody2D!");
         }
     }
 
     void Jump()
     {
-        if (isGrounded)
+        if (isGrounded && Mathf.Abs(rb.velocity.y) < 0.1f)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            Debug.Log("AI jumped!");
         }
     }
 

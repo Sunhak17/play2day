@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlay.unity
     guid: 320e0828c91fde34b87fe03b092dacb2
   - enabled: 1
-    path: Assets/Scenes/Choose.unity
+    path: Assets/Scenes/Team_selection.unity
     guid: ae1fb1ffbc4900d47b8b9e8ed2c187e7
   - enabled: 1
     path: Assets/Scenes/Main-Menu/Setting.unity
     guid: 576b20d9a86777e4a874a541a9ca9710
+  - enabled: 1
+    path: Assets/Scenes/Choose_Customization.unity
+    guid: f2561b0411962744d97e2657304932ef
   m_configObjects: {}

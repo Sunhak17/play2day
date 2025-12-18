@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float groundRadius = 0.2f;
     public LayerMask groundLayer;
 
+    [Header("Kick Animation")]
+    public PlayerKickAnimation kickAnimation;
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool wasGrounded;
@@ -21,6 +24,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
+        // Auto-find kick animation component if not assigned
+        if (kickAnimation == null)
+            kickAnimation = GetComponent<PlayerKickAnimation>();
     }
 
     void Update()
@@ -43,6 +50,10 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("K key pressed - attempting kick");
             TryKickBall();
+            
+            // Play kick animation
+            if (kickAnimation != null)
+                kickAnimation.PlayKickAnimation();
         }
     }
 
@@ -78,46 +89,15 @@ public class PlayerController : MonoBehaviour
         if (ballObj != null)
         {
             float distance = Vector2.Distance(transform.position, ballObj.transform.position);
-            Debug.Log("Ball found! Distance: " + distance);
-            if (distance < 3.5f) // Kick if within 3.5 units (increased range)
+            if (distance < 3.5f) // Kick if within 3.5 units
             {
                 Rigidbody2D ballRb = ballObj.GetComponent<Rigidbody2D>();
                 if (ballRb != null)
                 {
                     // Kick in the direction player is facing
-                    Vector2 kickDirection = new Vector2(facingDirection, 0.3f).normalized;
-                    ballRb.AddForce(kickDirection * 15f, ForceMode2D.Impulse);
-                    Debug.Log("Ball kicked forward!");
-                }
-                else
-                {
-                    Debug.Log("Ball has no Rigidbody2D!");
-                }
-            }
-            else
-            {
-                Debug.Log("Ball too far to kick! Distance: " + distance + " (need < 3.5)");
-            }
-        }
-        else
-        {
-            Debug.Log("Ball not found! Check if ball has 'Ball' tag.");
-        }
-    }
-
-    // Ball kicking logic: press K when near the ball
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ball"))
-        {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                Rigidbody2D ballRb = collision.gameObject.GetComponent<Rigidbody2D>();
-                if (ballRb != null)
-                {
-                    // Kick in the direction player is facing
-                    Vector2 kickDirection = new Vector2(facingDirection, 0.3f).normalized;
-                    ballRb.AddForce(kickDirection * 500f, ForceMode2D.Impulse);
+                    Vector2 kickDirection = new Vector2(facingDirection, 0.5f).normalized;
+                    ballRb.AddForce(kickDirection * 20f, ForceMode2D.Impulse);
+                    Debug.Log("Player kicked!");
                 }
             }
         }

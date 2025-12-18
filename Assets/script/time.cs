@@ -30,4 +30,15 @@ public class time : MonoBehaviour
     {
         return currentTime;
     }
+
+    public void ResetTimer()
+    {
+        currentTime = gameTime;
+    }
+
+    public void SetTime(float newTime)
+    {
+        gameTime = newTime;
+        currentTime = newTime;
+    }
 }

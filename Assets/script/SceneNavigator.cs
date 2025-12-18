@@ -23,7 +23,12 @@ public class SceneNavigator : MonoBehaviour
 
     public void LoadChoose()
     {
-        SceneManager.LoadScene("Choose");
+        SceneManager.LoadScene("Team_selection");
+    }
+
+    public void LoadChoose_Menu()
+    {
+        SceneManager.LoadScene("Choose_Customization");
     }
 
     public void LoadGamePlay()
