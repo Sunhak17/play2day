@@ -9,7 +9,7 @@ public class AIPlayer : MonoBehaviour
     [Header("AI Settings")]
     public Transform ball;
     public Transform targetGoal; // Assign the opponent's goal
-    public float kickDistance = 1.5f;
+    public float kickDistance = 1.0f; // Only kick when very close to ball
     public float kickForce = 15f;
     public float jumpChance = 0.3f; // 30% chance to jump when near ball
 
@@ -67,7 +67,7 @@ public class AIPlayer : MonoBehaviour
             MoveTowardsBall();
         }
         // Stop and kick if close enough
-        else
+        else if (distanceToBall <= kickDistance)
         {
             // Stop moving
             rb.velocity = new Vector2(0, rb.velocity.y);
@@ -80,6 +80,11 @@ public class AIPlayer : MonoBehaviour
                 TryKickBall();
                 lastKickTime = Time.time;
             }
+        }
+        else
+        {
+            // Ball is somewhat close but not in kick range - keep moving
+            MoveTowardsBall();
         }
     }
 

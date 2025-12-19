@@ -11,8 +11,10 @@ public class PlayerController : MonoBehaviour
     public float groundRadius = 0.2f;
     public LayerMask groundLayer;
 
-    [Header("Kick Animation")]
-    public PlayerKickAnimation kickAnimation;
+    [Header("Animation")]
+    public Animator animator;
+    public Animator leftShoeAnimator; // Optional: for left shoe
+    public string kickTriggerName = "Kick"; // Name of the trigger in your Animation Controller
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -25,9 +27,27 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         
-        // Auto-find kick animation component if not assigned
-        if (kickAnimation == null)
-            kickAnimation = GetComponent<PlayerKickAnimation>();
+        // Auto-find Animator component if not assigned
+        if (animator == null)
+        {
+            // Try to find on this GameObject first
+            animator = GetComponent<Animator>();
+            
+            // If not found, search in children (shoes)
+            if (animator == null)
+            {
+                animator = GetComponentInChildren<Animator>();
+            }
+            
+            if (animator == null)
+            {
+                Debug.LogError("No Animator component found on Player or its children! Please add Animator to shoes.");
+            }
+            else
+            {
+                Debug.Log("Animator found on: " + animator.gameObject.name + " | Trigger name set to: " + kickTriggerName);
+            }
+        }
     }
 
     void Update()
@@ -49,11 +69,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("K key pressed - attempting kick");
-            TryKickBall();
             
-            // Play kick animation
-            if (kickAnimation != null)
-                kickAnimation.PlayKickAnimation();
+            // Play animation every time K is pressed
+            if (animator != null)
+            {
+                Debug.Log("Triggering animation: " + kickTriggerName);
+                animator.SetTrigger(kickTriggerName);
+                
+                // Trigger left shoe too if assigned
+                if (leftShoeAnimator != null)
+                    leftShoeAnimator.SetTrigger(kickTriggerName);
+            }
+            
+            TryKickBall();
         }
     }
 
@@ -89,7 +117,8 @@ public class PlayerController : MonoBehaviour
         if (ballObj != null)
         {
             float distance = Vector2.Distance(transform.position, ballObj.transform.position);
-            if (distance < 3.5f) // Kick if within 3.5 units
+            Debug.Log($"Player to ball distance: {distance:F2}");
+            if (distance < 1.2f) // Kick only if very close to feet
             {
                 Rigidbody2D ballRb = ballObj.GetComponent<Rigidbody2D>();
                 if (ballRb != null)
@@ -99,6 +128,10 @@ public class PlayerController : MonoBehaviour
                     ballRb.AddForce(kickDirection * 20f, ForceMode2D.Impulse);
                     Debug.Log("Player kicked!");
                 }
+            }
+            else
+            {
+                Debug.Log($"Ball too far! Distance: {distance:F2} (need < 1.2)");
             }
         }
     }
