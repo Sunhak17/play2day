@@ -93,10 +93,18 @@ public class GamePlaySetup : MonoBehaviour
         }
 
         // Apply Ball
-        if (ballSpriteRenderer != null && TeamData.instance.selectedBallSprite != null)
+        if (ballSpriteRenderer == null)
+        {
+            Debug.LogError("Ball SpriteRenderer is NOT assigned in GamePlaySetup!");
+        }
+        else if (TeamData.instance.selectedBallSprite == null)
+        {
+            Debug.LogWarning("No ball sprite selected! Using default ball. Ball name: " + TeamData.instance.selectedBall);
+        }
+        else
         {
             ballSpriteRenderer.sprite = TeamData.instance.selectedBallSprite;
-            Debug.Log("Applied ball: " + TeamData.instance.selectedBall);
+            Debug.Log("Applied ball: " + TeamData.instance.selectedBall + " (Sprite: " + TeamData.instance.selectedBallSprite.name + ")");
         }
 
         // Apply Stadium

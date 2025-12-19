@@ -17,10 +17,20 @@ public class GameResult : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            Debug.Log("[GameResult] Created and set to DontDestroyOnLoad. Current scores: Player " + playerScore + ", AI " + aiScore);
         }
         else
         {
+            Debug.Log("[GameResult] Duplicate instance found - Current instance has Player: " + instance.playerScore + ", AI: " + instance.aiScore + " - destroying this duplicate");
             Destroy(gameObject);
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (instance == this)
+        {
+            Debug.LogError("[GameResult] MAIN INSTANCE IS BEING DESTROYED! Scores: Player " + playerScore + ", AI " + aiScore);
         }
     }
 
@@ -30,7 +40,7 @@ public class GameResult : MonoBehaviour
         aiScore = aiScoreValue;
         winner = winnerValue;
         wasGoldenGoal = goldenGoal;
-        Debug.Log($"Match Result Set - Player: {playerScore}, AI: {aiScore}, Winner: {winner}");
+        Debug.Log($"[GameResult] Match Result SET - Player: {playerScore}, AI: {aiScore}, Winner: {winner}, Golden Goal: {wasGoldenGoal}");
     }
 
     public void Reset()

@@ -14,9 +14,15 @@ public class ScoreManager : MonoBehaviour
     void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+            Debug.Log("ScoreManager created and set to DontDestroyOnLoad");
+        }
         else
+        {
             Destroy(gameObject);
+        }
     }
 
     void Start()
@@ -27,12 +33,14 @@ public class ScoreManager : MonoBehaviour
     public void AddPlayerScore()
     {
         playerScore++;
+        Debug.Log($"Player scored! New score - Player: {playerScore}, AI: {aiScore}");
         UpdateScoreUI();
     }
 
     public void AddAIScore()
     {
         aiScore++;
+        Debug.Log($"AI scored! New score - Player: {playerScore}, AI: {aiScore}");
         UpdateScoreUI();
     }
 

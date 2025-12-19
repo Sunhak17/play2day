@@ -55,50 +55,70 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         gameEnded = true;
+        Debug.Log("=== GAME ENDING ===");
 
         // Determine winner
         string winner = "";
-        if (ScoreManager.instance != null)
+        if (ScoreManager.instance == null)
         {
-            int playerScore = ScoreManager.instance.playerScore;
-            int aiScore = ScoreManager.instance.aiScore;
-
-            if (playerScore > aiScore)
-            {
-                winner = "Player";
-                if (winnerText != null)
-                    winnerText.text = "Player Wins!";
-            }
-            else if (aiScore > playerScore)
-            {
-                winner = "AI";
-                if (winnerText != null)
-                    winnerText.text = "AI Wins!";
-            }
-            else
-            {
-                winner = "Draw";
-                if (winnerText != null)
-                    winnerText.text = "It's a Draw!";
-            }
-
-            // Check if it's a draw - start golden goal
-            if (winner == "Draw" && !isGoldenGoal)
-            {
-                Debug.Log("Match is a draw! Starting Golden Goal mode...");
-                StartGoldenGoalMode();
-                return; // Don't pause the game or show game over panel
-            }
-
-            // Save results
-            if (GameResult.instance == null)
-            {
-                GameObject resultObj = new GameObject("GameResult");
-                resultObj.AddComponent<GameResult>();
-            }
-            
-            GameResult.instance.SetMatchResult(playerScore, aiScore, winner, isGoldenGoal);
+            Debug.LogError("ScoreManager.instance is NULL! Cannot read scores!");
+            return;
         }
+
+        int playerScore = ScoreManager.instance.playerScore;
+        int aiScore = ScoreManager.instance.aiScore;
+
+        Debug.Log($"Final Scores - Player: {playerScore}, AI: {aiScore}");
+
+        if (playerScore > aiScore)
+        {
+            winner = "Player";
+            if (winnerText != null)
+                winnerText.text = "Player Wins!";
+        }
+        else if (aiScore > playerScore)
+        {
+            winner = "AI";
+            if (winnerText != null)
+                winnerText.text = "AI Wins!";
+        }
+        else
+        {
+            winner = "Draw";
+            if (winnerText != null)
+                winnerText.text = "It's a Draw!";
+        }
+
+        Debug.Log($"Winner determined: {winner}");
+
+        // Check if it's a draw - start golden goal
+        if (winner == "Draw" && !isGoldenGoal)
+        {
+            Debug.Log("Match is a draw! Starting Golden Goal mode...");
+            StartGoldenGoalMode();
+            return; // Don't pause the game or show game over panel
+        }
+
+        // Save results - ensure GameResult exists and persists
+        if (GameResult.instance == null)
+        {
+            Debug.LogWarning("GameResult.instance was NULL! Creating new one...");
+            GameObject resultObj = new GameObject("GameResult");
+            GameResult result = resultObj.AddComponent<GameResult>();
+            // Wait a frame to ensure Awake() completes
+            Debug.Log("GameResult created, waiting for initialization...");
+        }
+        
+        // Double check it exists
+        if (GameResult.instance == null)
+        {
+            Debug.LogError("GameResult.instance is STILL NULL after creation! Cannot save scores!");
+            return;
+        }
+        
+        Debug.Log($"Saving match result: Player {playerScore} - {aiScore} AI, Winner: {winner}, Golden Goal: {isGoldenGoal}");
+        GameResult.instance.SetMatchResult(playerScore, aiScore, winner, isGoldenGoal);
+        Debug.Log($"Verified GameResult has scores: Player {GameResult.instance.playerScore}, AI {GameResult.instance.aiScore}");
 
         // Go directly to After-Match scene after 2 seconds
         Debug.Log("Game ended! Going to After-Match scene...");
@@ -176,6 +196,17 @@ public class GameManager : MonoBehaviour
     public void GoToAfterMatch()
     {
         Time.timeScale = 1f;
+        
+        // Final verification before scene change
+        if (GameResult.instance != null)
+        {
+            Debug.Log($"[GameManager] Before scene load - GameResult exists with Player: {GameResult.instance.playerScore}, AI: {GameResult.instance.aiScore}");
+        }
+        else
+        {
+            Debug.LogError("[GameManager] GameResult.instance is NULL before loading After-Match scene!");
+        }
+        
         SceneManager.LoadScene("After-Match");
     }
 

@@ -802,13 +802,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTeamName: 
+  playerTeamShortName: 
   playerTeamLogo: {fileID: 0}
   playerCharacterSprite: {fileID: 0}
   playerTeamKit: {fileID: 0}
+  playerHeadSprite: {fileID: 0}
   aiTeamName: 
+  aiTeamShortName: 
   aiTeamLogo: {fileID: 0}
   aiCharacterSprite: {fileID: 0}
   aiTeamKit: {fileID: 0}
+  aiHeadSprite: {fileID: 0}
   selectedBall: 
   selectedBallSprite: {fileID: 0}
   selectedStadium: 
@@ -1276,49 +1280,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teams:
   - teamName: ISI Dangkor Senchey FC
+    teamShortName: ISI
     teamLogo: {fileID: 21300000, guid: 9271fee7a312a86439d6f104a46f134d, type: 3}
     playerCharacter: {fileID: 21300000, guid: 87fe586d35db5a243a344aefa7e3a240, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 87fe586d35db5a243a344aefa7e3a240, type: 3}
   - teamName: Boeung Ket
+    teamShortName: BKF
     teamLogo: {fileID: 21300000, guid: 008df9ac707bad745bd9793db91a1398, type: 3}
     playerCharacter: {fileID: 21300000, guid: 746fda93d418e0146877812b08286015, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 746fda93d418e0146877812b08286015, type: 3}
   - teamName: Kirivong Sok Sen Chey
+    teamShortName: KSC
     teamLogo: {fileID: 21300000, guid: b312373fdc4efdc46a92fa072fbb0aff, type: 3}
     playerCharacter: {fileID: 21300000, guid: 193c80ca7465b074fbaf593864693868, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 193c80ca7465b074fbaf593864693868, type: 3}
   - teamName: Life FC Sihanoukville
+    teamShortName: SHV
     teamLogo: {fileID: 21300000, guid: de5482aee87019446bbc45dc7e6b18df, type: 3}
     playerCharacter: {fileID: 21300000, guid: c1ab819f3efa67f4bbffffd4bdbda976, type: 3}
     teamKit: {fileID: 21300000, guid: 17b8b8248c0355447a2c4a9730b4034d, type: 3}
+    playerHead: {fileID: 21300000, guid: c1ab819f3efa67f4bbffffd4bdbda976, type: 3}
   - teamName: MOI Kompong Dewa FC
+    teamShortName: MKD
     teamLogo: {fileID: 21300000, guid: 4c4307c2a25bcf2468884555c096d2d4, type: 3}
     playerCharacter: {fileID: 21300000, guid: d33a94c178a3bf1479a512a8e36be649, type: 3}
     teamKit: {fileID: 21300000, guid: 17b8b8248c0355447a2c4a9730b4034d, type: 3}
+    playerHead: {fileID: 21300000, guid: d33a94c178a3bf1479a512a8e36be649, type: 3}
   - teamName: NagaWorld FC
+    teamShortName: NGW
     teamLogo: {fileID: 21300000, guid: 9b208943a25a88b4ca82c4c7c201486d, type: 3}
     playerCharacter: {fileID: 21300000, guid: 5262319fd9bf40d4c9789beebd3ded82, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 5262319fd9bf40d4c9789beebd3ded82, type: 3}
   - teamName: ' Phnom Penh Crown FC'
+    teamShortName: PPC
     teamLogo: {fileID: 21300000, guid: a707dcd77dadeb349ab8775e46012325, type: 3}
     playerCharacter: {fileID: 21300000, guid: 5d24b6c6f1b65684383d3fac5cdcde9e, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 5d24b6c6f1b65684383d3fac5cdcde9e, type: 3}
   - teamName: Preah Khan Reach Svay Rieng FC
+    teamShortName: PKR
     teamLogo: {fileID: 21300000, guid: f67acf4a617665244b14535974b54d40, type: 3}
     playerCharacter: {fileID: 21300000, guid: 9dba04b04cecc92468f81a37d8a65f62, type: 3}
     teamKit: {fileID: 21300000, guid: 17b8b8248c0355447a2c4a9730b4034d, type: 3}
+    playerHead: {fileID: 21300000, guid: 9dba04b04cecc92468f81a37d8a65f62, type: 3}
   - teamName: Royal Cambodian Armed Forces FC
+    teamShortName: RCA
     teamLogo: {fileID: 21300000, guid: a5ff90a5aa6efb240a6304c330815236, type: 3}
     playerCharacter: {fileID: 21300000, guid: 7c579ce74c305c24485f25d9ebeb0e7b, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 7c579ce74c305c24485f25d9ebeb0e7b, type: 3}
   - teamName: Visakha FC
+    teamShortName: VSK
     teamLogo: {fileID: 21300000, guid: 8f1947d4ec210ed4a91934358fb5fb7e, type: 3}
     playerCharacter: {fileID: 21300000, guid: 0469386a47bfd2847b54baf4691cbd26, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 0469386a47bfd2847b54baf4691cbd26, type: 3}
   - teamName: Angkor Tiger FC
+    teamShortName: AKT
     teamLogo: {fileID: 21300000, guid: 73e69b0b5bb34ca4fa87a2e7f46b8871, type: 3}
     playerCharacter: {fileID: 21300000, guid: 946551262ecd23e4ab5d91e9a988c7c6, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 946551262ecd23e4ab5d91e9a988c7c6, type: 3}
   isPlayerSelector: 0
   teamLogoImage: {fileID: 628684882}
   teamNameText: {fileID: 698826072}
@@ -2330,49 +2356,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teams:
   - teamName: Boeung Ket
+    teamShortName: BKF
     teamLogo: {fileID: 21300000, guid: 008df9ac707bad745bd9793db91a1398, type: 3}
     playerCharacter: {fileID: 21300000, guid: 746fda93d418e0146877812b08286015, type: 3}
     teamKit: {fileID: 21300000, guid: 17b8b8248c0355447a2c4a9730b4034d, type: 3}
+    playerHead: {fileID: 21300000, guid: 746fda93d418e0146877812b08286015, type: 3}
   - teamName: ISI Dangkor Senchey FC
+    teamShortName: ISI
     teamLogo: {fileID: 21300000, guid: 9271fee7a312a86439d6f104a46f134d, type: 3}
     playerCharacter: {fileID: 21300000, guid: 87fe586d35db5a243a344aefa7e3a240, type: 3}
     teamKit: {fileID: 21300000, guid: 17b8b8248c0355447a2c4a9730b4034d, type: 3}
+    playerHead: {fileID: 21300000, guid: 87fe586d35db5a243a344aefa7e3a240, type: 3}
   - teamName: Kirivong Sok Sen Chey
+    teamShortName: KSC
     teamLogo: {fileID: 21300000, guid: b312373fdc4efdc46a92fa072fbb0aff, type: 3}
     playerCharacter: {fileID: 21300000, guid: 193c80ca7465b074fbaf593864693868, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 193c80ca7465b074fbaf593864693868, type: 3}
   - teamName: Life FC Sihanoukville
+    teamShortName: SHV
     teamLogo: {fileID: 21300000, guid: de5482aee87019446bbc45dc7e6b18df, type: 3}
     playerCharacter: {fileID: 21300000, guid: c1ab819f3efa67f4bbffffd4bdbda976, type: 3}
     teamKit: {fileID: 21300000, guid: 17b8b8248c0355447a2c4a9730b4034d, type: 3}
+    playerHead: {fileID: 21300000, guid: c1ab819f3efa67f4bbffffd4bdbda976, type: 3}
   - teamName: MOI Kompong Dewa FC
+    teamShortName: MKD
     teamLogo: {fileID: 21300000, guid: 4c4307c2a25bcf2468884555c096d2d4, type: 3}
     playerCharacter: {fileID: 21300000, guid: d33a94c178a3bf1479a512a8e36be649, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: d33a94c178a3bf1479a512a8e36be649, type: 3}
   - teamName: NagaWorld FC
+    teamShortName: NGW
     teamLogo: {fileID: 21300000, guid: 9b208943a25a88b4ca82c4c7c201486d, type: 3}
     playerCharacter: {fileID: 21300000, guid: 5262319fd9bf40d4c9789beebd3ded82, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 5262319fd9bf40d4c9789beebd3ded82, type: 3}
   - teamName: ' Phnom Penh Crown FC'
+    teamShortName: PPC
     teamLogo: {fileID: 21300000, guid: a707dcd77dadeb349ab8775e46012325, type: 3}
     playerCharacter: {fileID: 21300000, guid: 5d24b6c6f1b65684383d3fac5cdcde9e, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 5d24b6c6f1b65684383d3fac5cdcde9e, type: 3}
   - teamName: Preah Khan Reach Svay Rieng FC
+    teamShortName: PKR
     teamLogo: {fileID: 21300000, guid: f67acf4a617665244b14535974b54d40, type: 3}
     playerCharacter: {fileID: 21300000, guid: 9dba04b04cecc92468f81a37d8a65f62, type: 3}
     teamKit: {fileID: 21300000, guid: 17b8b8248c0355447a2c4a9730b4034d, type: 3}
+    playerHead: {fileID: 21300000, guid: 9dba04b04cecc92468f81a37d8a65f62, type: 3}
   - teamName: Royal Cambodian Armed Forces FC
+    teamShortName: RCA
     teamLogo: {fileID: 21300000, guid: a5ff90a5aa6efb240a6304c330815236, type: 3}
     playerCharacter: {fileID: 21300000, guid: 7c579ce74c305c24485f25d9ebeb0e7b, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 7c579ce74c305c24485f25d9ebeb0e7b, type: 3}
   - teamName: Visakha FC
+    teamShortName: VSK
     teamLogo: {fileID: 21300000, guid: 8f1947d4ec210ed4a91934358fb5fb7e, type: 3}
     playerCharacter: {fileID: 21300000, guid: 0469386a47bfd2847b54baf4691cbd26, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 0469386a47bfd2847b54baf4691cbd26, type: 3}
   - teamName: Angkor Tiger FC
+    teamShortName: AKT
     teamLogo: {fileID: 21300000, guid: 73e69b0b5bb34ca4fa87a2e7f46b8871, type: 3}
     playerCharacter: {fileID: 21300000, guid: 946551262ecd23e4ab5d91e9a988c7c6, type: 3}
     teamKit: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+    playerHead: {fileID: 21300000, guid: 946551262ecd23e4ab5d91e9a988c7c6, type: 3}
   isPlayerSelector: 1
   teamLogoImage: {fileID: 1503510057}
   teamNameText: {fileID: 3493414}
@@ -2650,8 +2698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0025024, y: -0.000015259}
-  m_SizeDelta: {x: 947.76, y: 472}
+  m_AnchoredPosition: {x: 0.00054169, y: 0}
+  m_SizeDelta: {x: 1007.7, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984024917
 MonoBehaviour:

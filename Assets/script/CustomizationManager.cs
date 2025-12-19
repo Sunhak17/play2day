@@ -57,18 +57,45 @@ public class CustomizationManager : MonoBehaviour
 
     public void OnStartButtonClicked()
     {
+        Debug.Log("Start button clicked!");
+        
         // Save all customization selections
         if (TeamData.instance != null)
         {
+            if (ballSelector == null)
+            {
+                Debug.LogError("Ball Selector is NOT assigned in CustomizationManager!");
+            }
+            else
+            {
+                Debug.Log("Ball Selector found, getting selection...");
+            }
+
+            if (stadiumSelector == null)
+            {
+                Debug.LogError("Stadium Selector is NOT assigned in CustomizationManager!");
+            }
+            else
+            {
+                Debug.Log("Stadium Selector found, getting selection...");
+            }
+
             string ball = ballSelector != null ? ballSelector.GetSelectedItem() : "";
             Sprite ballSprite = ballSelector != null ? ballSelector.GetSelectedSprite() : null;
             string stadium = stadiumSelector != null ? stadiumSelector.GetSelectedItem() : "";
             Sprite stadiumSprite = stadiumSelector != null ? stadiumSelector.GetSelectedSprite() : null;
 
+            Debug.Log($"Ball selected: {ball}, Sprite: {(ballSprite != null ? ballSprite.name : "NULL")}");
+            Debug.Log($"Stadium selected: {stadium}, Sprite: {(stadiumSprite != null ? stadiumSprite.name : "NULL")}");
+
             TeamData.instance.SetCustomizationWithSprites(ball, ballSprite, stadium, stadiumSprite);
 
             Debug.Log($"Customization saved - Ball: {ball}, Stadium: {stadium}");
             Debug.Log($"Player characters - Player: {TeamData.instance.playerTeamName}, AI: {TeamData.instance.aiTeamName}");
+        }
+        else
+        {
+            Debug.LogError("TeamData.instance is NULL!");
         }
 
         // Load gameplay scene

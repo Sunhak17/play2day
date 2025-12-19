@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 9179240}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 454, y: -112, z: 0}
+  m_LocalPosition: {x: 465, y: -112, z: 0}
   m_LocalScale: {x: 27.833437, y: 32.311802, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -898,8 +898,8 @@ Transform:
   m_GameObject: {fileID: 338584972}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.77, y: 1.98, z: 0}
-  m_LocalScale: {x: 112.32938, y: 123.291245, z: 2}
+  m_LocalPosition: {x: 2.68, y: 10.73, z: 0}
+  m_LocalScale: {x: 116.86748, y: 128.22289, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 709678920}
@@ -2196,7 +2196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 166, y: -12.8}
+  m_AnchoredPosition: {x: 177, y: -17.71}
   m_SizeDelta: {x: 44.09, y: 44.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787932449
@@ -2401,11 +2401,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpriteRenderer: {fileID: 1214648495}
+  playerHeadRenderer: {fileID: 244308301}
   playerObject: {fileID: 2035051527}
   playerTeamLogoUI: {fileID: 1233748907}
+  playerTeamNameText: {fileID: 1543063661}
   aiSpriteRenderer: {fileID: 1303469799}
+  aiHeadRenderer: {fileID: 517749950}
   aiObject: {fileID: 683658602}
   aiTeamLogoUI: {fileID: 787932449}
+  aiTeamNameText: {fileID: 386232515}
   ballSpriteRenderer: {fileID: 1108545372}
   stadiumBackground: {fileID: 338584974}
 --- !u!4 &965460383
@@ -2468,10 +2472,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607bd1a76381eb848be982aa5ce37c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverPanel: {fileID: 1294724780}
-  winnerText: {fileID: 2053245684}
-  goldenGoalPanel: {fileID: 1862952260}
-  goldenGoalText: {fileID: 2053245684}
+  gameOverPanel: {fileID: 0}
+  winnerText: {fileID: 0}
+  goldenGoalPanel: {fileID: 0}
+  goldenGoalText: {fileID: 0}
   goldenGoalMode: 0
   goldenGoalTime: 30
 --- !u!114 &994183774
@@ -2524,8 +2528,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 167}
-  m_SizeDelta: {x: -518.12, y: -350.84}
+  m_AnchoredPosition: {x: -16.629974, y: 167}
+  m_SizeDelta: {x: -551.37, y: -350.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071467196
 MonoBehaviour:
@@ -2957,7 +2961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -164, y: -11.6}
+  m_AnchoredPosition: {x: -181, y: -17.055}
   m_SizeDelta: {x: 38.39, y: 43.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1233748907
@@ -3024,11 +3028,11 @@ Transform:
   m_GameObject: {fileID: 1274665271}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -217.09468, y: -125.2625, z: 37257.996}
-  m_LocalScale: {x: 49.399998, y: 49.399998, z: 49.399998}
+  m_LocalPosition: {x: -4.3946295, y: -2.5356781, z: 844.2105}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1422025381}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1274665273
 MonoBehaviour:
@@ -3456,7 +3460,6 @@ RectTransform:
   - {fileID: 421914550}
   - {fileID: 994183772}
   - {fileID: 1294724783}
-  - {fileID: 1274665272}
   - {fileID: 487541509}
   - {fileID: 1862952261}
   - {fileID: 2053245683}
@@ -3881,7 +3884,7 @@ Transform:
   m_GameObject: {fileID: 1583187199}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -459, y: -111, z: 0}
+  m_LocalPosition: {x: -480, y: -111, z: 0}
   m_LocalScale: {x: 26.185698, y: 30.633266, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4022,7 +4025,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.4706593, y: -6.0136786}
+  m_Offset: {x: -5.0347447, y: -6.4558363}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4033,7 +4036,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2841239, y: 3.4767723}
+  m_Size: {x: 0.41201878, y: 2.504696}
   m_EdgeRadius: 0
 --- !u!1 &1698181720
 GameObject:
@@ -4099,7 +4102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.668789, y: 2.6}
+  m_Offset: {x: 0.77102745, y: 2.6}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4110,7 +4113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.3493598, y: 0.24457121}
+  m_Size: {x: 3.5538366, y: 0.24457121}
   m_EdgeRadius: 0
 --- !u!1 &1710277302
 GameObject:
@@ -4278,7 +4281,7 @@ GameObject:
   - component: {fileID: 1862952263}
   - component: {fileID: 1862952262}
   m_Layer: 5
-  m_Name: GoldenGoal
+  m_Name: Full-Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4455,7 +4458,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 14.327637, y: -5.996913}
+  m_Offset: {x: 14.807793, y: -6.392454}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4466,7 +4469,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2108202, y: 3.3744354}
+  m_Size: {x: 0.41299057, y: 2.583353}
   m_EdgeRadius: 0
 --- !u!1 &2002067697
 GameObject:
@@ -5073,4 +5076,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1424767467}
+  - {fileID: 1274665272}
   - {fileID: 1422025381}
