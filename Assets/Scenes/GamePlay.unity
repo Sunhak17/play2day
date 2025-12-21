@@ -493,9 +493,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0, y: 0.122451074}
+  m_Offset: {x: -0, y: 0.22583333}
   serializedVersion: 2
-  m_Radius: 1.5524694
+  m_Radius: 1.6330705
 --- !u!212 &244308301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1094,8 +1094,8 @@ Transform:
   m_GameObject: {fileID: 418809078}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.432, y: -3.796, z: 1.2326903}
-  m_LocalScale: {x: 1.8810147, y: 1.8607385, z: 0.16}
+  m_LocalPosition: {x: 10.209, y: -3.587, z: 1.2326903}
+  m_LocalScale: {x: 1.0255302, y: 1.1493185, z: 0.16}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1838917040}
@@ -1157,7 +1157,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.85, y: 2.72}
+    oldSize: {x: 4.28, y: 4.62}
     newSize: {x: 4.3, y: 4.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1272,7 +1272,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 17b8b8248c0355447a2c4a9730b4034d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1503,8 +1503,8 @@ Transform:
   m_GameObject: {fileID: 602504313}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.14, y: -5.65, z: 1.2326903}
-  m_LocalScale: {x: 0.26539135, y: 0.43580317, z: 0.12}
+  m_LocalPosition: {x: 9.76, y: -5.93, z: 1.2326903}
+  m_LocalScale: {x: -0.523465, y: 0.64730424, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2035051531}
@@ -1545,7 +1545,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.74, y: 4.62}
+    oldSize: {x: 4.62, y: 4.62}
     newSize: {x: 8.74, y: 4.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1722,7 +1722,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 780d432fc6f24ef41bf33523639a5184, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1863,6 +1863,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 292.6211, y: 4620.4854}
   m_EdgeRadius: 0
+--- !u!1 &777662290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777662291}
+  m_Layer: 0
+  m_Name: headCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &777662291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777662290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1838917040}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &787932447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,7 +1929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 336.6, y: -27.566}
+  m_AnchoredPosition: {x: 324, y: -27.566}
   m_SizeDelta: {x: 101.55, y: 97.422}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787932449
@@ -2107,9 +2138,9 @@ MonoBehaviour:
   playerObject: {fileID: 2035051527}
   playerTeamLogoUI: {fileID: 1233748907}
   playerTeamNameText: {fileID: 1543063661}
-  aiSpriteRenderer: {fileID: 0}
-  aiHeadRenderer: {fileID: 0}
-  aiObject: {fileID: 0}
+  aiSpriteRenderer: {fileID: 418809082}
+  aiHeadRenderer: {fileID: 1900630811}
+  aiObject: {fileID: 1838917039}
   aiTeamLogoUI: {fileID: 787932449}
   aiTeamNameText: {fileID: 386232515}
   ballSpriteRenderer: {fileID: 1108545372}
@@ -2350,9 +2381,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03196453, y: 0.014526086}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 1.935411
 --- !u!212 &1108545372
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2432,6 +2463,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a881c1ce1715945807a7f883ee3651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounciness: 0.7
+  mass: 0.6
+  drag: 0.5
+  angularDrag: 0.5
 --- !u!1 &1153109671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,8 +2495,8 @@ Transform:
   m_GameObject: {fileID: 1153109671}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.72, y: -5.89, z: 1.2326903}
-  m_LocalScale: {x: 0.2181517, y: 0.4000673, z: 0.12}
+  m_LocalPosition: {x: 10.58, y: -6.22, z: 1.2326903}
+  m_LocalScale: {x: -0.3383533, y: 0.4000673, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1838917040}
@@ -2523,7 +2558,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.74, y: 4.62}
+    oldSize: {x: 4.62, y: 4.62}
     newSize: {x: 8.74, y: 4.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2700,7 +2735,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 780d432fc6f24ef41bf33523639a5184, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2743,6 +2778,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1838917040}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1183431058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1183431059}
+  m_Layer: 0
+  m_Name: headCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1183431059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183431058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2035051531}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1214648492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,8 +2837,8 @@ Transform:
   m_GameObject: {fileID: 1214648492}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.924, y: -3.906, z: 1.2326903}
-  m_LocalScale: {x: 0.7913959, y: 0.91216475, z: 0.16}
+  m_LocalPosition: {x: 10.66, y: -3.16, z: 1.2326903}
+  m_LocalScale: {x: 1.0952919, y: 1.2204765, z: 0.16}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2035051531}
@@ -2813,7 +2879,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.3, y: 4.62}
+    oldSize: {x: 4.26, y: 4.62}
     newSize: {x: 4.3, y: 4.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2929,9 +2995,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: bc9a4e41d128b0a45b24dfd0c38a88ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6ae643540b59ba44ba2ada92306947e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 4.3, y: 4.62}
@@ -2996,7 +3062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -338.6, y: -25.157}
+  m_AnchoredPosition: {x: -328, y: -25.157}
   m_SizeDelta: {x: 97.08, y: 92.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1233748907
@@ -3515,8 +3581,8 @@ Transform:
   m_GameObject: {fileID: 1531366541}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.72, y: -5.89, z: 1.2326903}
-  m_LocalScale: {x: 0.2181517, y: 0.4000673, z: 0.12}
+  m_LocalPosition: {x: 10.53, y: -5.93, z: 1.2326903}
+  m_LocalScale: {x: 0.51675534, y: 0.568856, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2035051531}
@@ -3578,7 +3644,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.74, y: 4.62}
+    oldSize: {x: 4.62, y: 4.62}
     newSize: {x: 8.74, y: 4.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3755,10 +3821,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 780d432fc6f24ef41bf33523639a5184, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8.74, y: 4.62}
@@ -4078,7 +4144,7 @@ GameObject:
   - component: {fileID: 1653855933}
   m_Layer: 0
   m_Name: PlayerGoal
-  m_TagString: Untagged
+  m_TagString: GoalLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4145,7 +4211,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -14.044528, y: -8.796553}
+  m_Offset: {x: -13.770119, y: -8.843534}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4156,7 +4222,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0766926, y: 4.6805725}
+  m_Size: {x: 0.12243271, y: 4.586609}
   m_EdgeRadius: 0
 --- !u!1 &1658236146
 GameObject:
@@ -4186,8 +4252,8 @@ Transform:
   m_GameObject: {fileID: 1658236146}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.14, y: -5.65, z: 1.2326903}
-  m_LocalScale: {x: 0.26539135, y: 0.43580317, z: 0.12}
+  m_LocalPosition: {x: 8.9, y: -6.06, z: 1.2326903}
+  m_LocalScale: {x: -0.39702547, y: 0.43580317, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1838917040}
@@ -4249,7 +4315,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.74, y: 4.62}
+    oldSize: {x: 4.62, y: 4.62}
     newSize: {x: 8.74, y: 4.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4426,7 +4492,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 780d432fc6f24ef41bf33523639a5184, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4697,10 +4763,11 @@ Transform:
   m_GameObject: {fileID: 1838917039}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 208, y: -255, z: -1.2326903}
+  m_LocalPosition: {x: 238, y: -240.5, z: -1.2326903}
   m_LocalScale: {x: 16.7232, y: 13.329428, z: 50}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 777662291}
   - {fileID: 1900630808}
   - {fileID: 418809079}
   - {fileID: 1658236147}
@@ -4749,6 +4816,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  headCheck: {fileID: 777662291}
+  headRadius: 0.3
+  headerForce: 15
+  headerChance: 0.15
   animator: {fileID: 1658236148}
   leftShoeAnimator: {fileID: 1153109673}
   kickTriggerName: Kick
@@ -4901,7 +4972,7 @@ GameObject:
   - component: {fileID: 1889971359}
   m_Layer: 0
   m_Name: AI_Goal
-  m_TagString: Untagged
+  m_TagString: GoalRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4968,7 +5039,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 23.226627, y: -9.058014}
+  m_Offset: {x: 23.038754, y: -9.064352}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4979,7 +5050,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.801466, y: 4.429405}
+  m_Size: {x: 0.10121918, y: 4.416729}
   m_EdgeRadius: 0
 --- !u!1 &1900630807
 GameObject:
@@ -5418,6 +5489,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  headCheck: {fileID: 1183431059}
+  headRadius: 0.3
+  headerForce: 18
+  headerTriggerName: Header
   animator: {fileID: 602504317}
   leftShoeAnimator: {fileID: 1531366543}
   kickTriggerName: Kick
@@ -5461,6 +5536,7 @@ Transform:
   m_LocalScale: {x: 16.7232, y: 13.329428, z: 50}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1183431059}
   - {fileID: 244308299}
   - {fileID: 1214648493}
   - {fileID: 602504314}

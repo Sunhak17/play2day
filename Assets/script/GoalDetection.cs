@@ -67,6 +67,9 @@ public class GoalDetection : MonoBehaviour
         // Reset ball position
         ResetBall(ball);
 
+        // Reset player positions
+        ResetPlayers();
+
         isProcessingGoal = false;
     }
 
@@ -78,6 +81,23 @@ public class GoalDetection : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
+        }
+    }
+
+    void ResetPlayers()
+    {
+        // Find and reset player
+        PlayerController player = FindObjectOfType<PlayerController>();
+        if (player != null)
+        {
+            player.ResetPosition();
+        }
+
+        // Find and reset AI
+        AIPlayer ai = FindObjectOfType<AIPlayer>();
+        if (ai != null)
+        {
+            ai.ResetPosition();
         }
     }
 }

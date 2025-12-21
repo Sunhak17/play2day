@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
     public float groundRadius = 0.2f;
     public LayerMask groundLayer;
 
+    [Header("Header Ability")]
+    public Transform headCheck; // Assign a transform above the player's head in the Inspector
+    public float headRadius = 0.3f;
+    public float headerForce = 18f;
+    public string headerTriggerName = "Header"; // Optional: animation trigger for header
+
     [Header("Animation")]
     public Animator animator;
     public Animator leftShoeAnimator; // Optional: for left shoe
@@ -22,10 +28,12 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private bool jumpRequest;
     private int facingDirection = 1; // 1 = right, -1 = left
+    private Vector3 startPosition; // Store starting position
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        startPosition = transform.position; // Save starting position
         
         // Auto-find Animator component if not assigned
         if (animator == null)
@@ -63,6 +71,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && rb.velocity.y <= 0.1f)
         {
             jumpRequest = true;
+            TryHeader(); // Check for header when jumping
         }
         
         // Alternative kick input (not requiring collision)
@@ -108,6 +117,13 @@ public class PlayerController : MonoBehaviour
         // Shows the ground check circle in the Scene View
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+
+        // Shows the head check circle in the Scene View
+        if (headCheck != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(headCheck.position, headRadius);
+        }
     }
 
     void TryKickBall()
@@ -134,5 +150,44 @@ public class PlayerController : MonoBehaviour
                 Debug.Log($"Ball too far! Distance: {distance:F2} (need < 1.2)");
             }
         }
+    }
+
+    void TryHeader()
+    {
+        // Only try header if headCheck is assigned
+        if (headCheck == null) return;
+
+        GameObject ballObj = GameObject.FindGameObjectWithTag("Ball");
+        if (ballObj != null)
+        {
+            float distance = Vector2.Distance(headCheck.position, ballObj.transform.position);
+            Debug.Log($"Player head to ball distance: {distance:F2}");
+            if (distance < headRadius + 0.3f) // Header if ball is close to head
+            {
+                Rigidbody2D ballRb = ballObj.GetComponent<Rigidbody2D>();
+                if (ballRb != null)
+                {
+                    // Header direction: up and forward
+                    Vector2 headerDirection = new Vector2(facingDirection, 1f).normalized;
+                    ballRb.AddForce(headerDirection * headerForce, ForceMode2D.Impulse);
+                    Debug.Log("Player header!");
+                    // Optional: trigger header animation
+                    if (animator != null && !string.IsNullOrEmpty(headerTriggerName))
+                        animator.SetTrigger(headerTriggerName);
+                }
+            }
+        }
+    }
+
+    public void ResetPosition()
+    {
+        // Reset player to starting position
+        transform.position = startPosition;
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+        Debug.Log("Player reset to starting position");
     }
 }
