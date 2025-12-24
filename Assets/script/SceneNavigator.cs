@@ -3,42 +3,49 @@ using UnityEngine.SceneManagement;
 
 public class SceneNavigator : MonoBehaviour
 {
-    // Load scene by name
+    // Load scene by name (through loading screen)
     public void LoadScene(string sceneName)
     {
         Time.timeScale = 1f; // Reset time scale in case it was paused
-        SceneManager.LoadScene(sceneName);
+        PlayerPrefs.SetString("TargetScene", sceneName);
+        SceneManager.LoadScene("Loading");
     }
 
     // Load specific scenes
     public void LoadWelcome()
     {
-        SceneManager.LoadScene("Welcome");
+        PlayerPrefs.SetString("TargetScene", "Welcome");
+        SceneManager.LoadScene("Loading");
     }
 
     public void LoadSetting()
     {
-        SceneManager.LoadScene("Setting");
+        PlayerPrefs.SetString("TargetScene", "Setting");
+        SceneManager.LoadScene("Loading");
     }
 
     public void LoadChoose()
     {
-        SceneManager.LoadScene("Team_selection");
+        PlayerPrefs.SetString("TargetScene", "Team_selection");
+        SceneManager.LoadScene("Loading");
     }
 
     public void LoadChoose_Menu()
     {
-        SceneManager.LoadScene("Choose_Customization");
+        PlayerPrefs.SetString("TargetScene", "Choose_Customization");
+        SceneManager.LoadScene("Loading");
     }
 
     public void LoadGamePlay()
     {
-        SceneManager.LoadScene("GamePlay");
+        PlayerPrefs.SetString("TargetScene", "GamePlay");
+        SceneManager.LoadScene("Loading");
     }
 
     public void LoadAfterMatch()
     {
-        SceneManager.LoadScene("After-Match");
+        PlayerPrefs.SetString("TargetScene", "After-Match");
+        SceneManager.LoadScene("Loading");
     }
 
     // Reload current scene

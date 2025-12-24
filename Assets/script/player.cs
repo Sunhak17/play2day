@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
         {
             float distance = Vector2.Distance(transform.position, ballObj.transform.position);
             Debug.Log($"Player to ball distance: {distance:F2}");
-            if (distance < 0.6f) // Kick only if very close to feet
+            if (distance < 1.0f) // Kick only if very close to feet
             {
                 Rigidbody2D ballRb = ballObj.GetComponent<Rigidbody2D>();
                 if (ballRb != null)
@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Ball too far! Distance: {distance:F2} (need < 1.2)");
+                Debug.Log($"Ball too far! Distance: {distance:F2} (need < 1.0)");
             }
         }
     }
