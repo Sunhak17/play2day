@@ -15,12 +15,21 @@ public class LoadingManager : MonoBehaviour
 
     void Start()
     {
-        // Get target scene from PlayerPrefs, default to Welcome
-        string targetSceneName = PlayerPrefs.GetString("TargetScene", "Welcome");
-        targetScene = targetSceneName;
-
-        // Start the loading sequence
-        StartCoroutine(LoadSceneAsync());
+        // Check if coming from first startup or scene transition
+        string targetSceneName = PlayerPrefs.GetString("TargetScene", "");
+        
+        if (targetSceneName == "")
+        {
+            // First startup - show loading to Welcome
+            targetScene = "Welcome";
+            StartCoroutine(LoadSceneAsync());
+        }
+        else
+        {
+            // Scene transition during gameplay - skip loading and go directly
+            SceneManager.LoadScene(targetSceneName);
+            PlayerPrefs.DeleteKey("TargetScene");
+        }
     }
 
     IEnumerator LoadSceneAsync()
@@ -62,6 +71,9 @@ public class LoadingManager : MonoBehaviour
 
         // Wait a moment before switching scene
         yield return new WaitForSeconds(0.5f);
+
+        // Mark game as started
+        PlayerPrefs.SetInt("GameStarted", 1);
 
         // Now allow the scene to activate
         if (asyncLoad != null)

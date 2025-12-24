@@ -7,45 +7,97 @@ public class SceneNavigator : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         Time.timeScale = 1f; // Reset time scale in case it was paused
-        PlayerPrefs.SetString("TargetScene", sceneName);
-        SceneManager.LoadScene("Loading");
+        
+        // Check if game has already started (skip loading screen)
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        else
+        {
+            // First time - use loading screen
+            PlayerPrefs.SetString("TargetScene", sceneName);
+            SceneManager.LoadScene("Loading");
+        }
     }
 
     // Load specific scenes
     public void LoadWelcome()
     {
-        PlayerPrefs.SetString("TargetScene", "Welcome");
-        SceneManager.LoadScene("Loading");
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
+        {
+            SceneManager.LoadScene("Welcome");
+        }
+        else
+        {
+            PlayerPrefs.SetString("TargetScene", "Welcome");
+            SceneManager.LoadScene("Loading");
+        }
     }
 
     public void LoadSetting()
     {
-        PlayerPrefs.SetString("TargetScene", "Setting");
-        SceneManager.LoadScene("Loading");
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
+        {
+            SceneManager.LoadScene("Setting");
+        }
+        else
+        {
+            PlayerPrefs.SetString("TargetScene", "Setting");
+            SceneManager.LoadScene("Loading");
+        }
     }
 
     public void LoadChoose()
     {
-        PlayerPrefs.SetString("TargetScene", "Team_selection");
-        SceneManager.LoadScene("Loading");
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
+        {
+            SceneManager.LoadScene("Team_selection");
+        }
+        else
+        {
+            PlayerPrefs.SetString("TargetScene", "Team_selection");
+            SceneManager.LoadScene("Loading");
+        }
     }
 
     public void LoadChoose_Menu()
     {
-        PlayerPrefs.SetString("TargetScene", "Choose_Customization");
-        SceneManager.LoadScene("Loading");
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
+        {
+            SceneManager.LoadScene("Choose_Customization");
+        }
+        else
+        {
+            PlayerPrefs.SetString("TargetScene", "Choose_Customization");
+            SceneManager.LoadScene("Loading");
+        }
     }
 
     public void LoadGamePlay()
     {
-        PlayerPrefs.SetString("TargetScene", "GamePlay");
-        SceneManager.LoadScene("Loading");
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
+        {
+            SceneManager.LoadScene("GamePlay");
+        }
+        else
+        {
+            PlayerPrefs.SetString("TargetScene", "GamePlay");
+            SceneManager.LoadScene("Loading");
+        }
     }
 
     public void LoadAfterMatch()
     {
-        PlayerPrefs.SetString("TargetScene", "After-Match");
-        SceneManager.LoadScene("Loading");
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
+        {
+            SceneManager.LoadScene("After-Match");
+        }
+        else
+        {
+            PlayerPrefs.SetString("TargetScene", "After-Match");
+            SceneManager.LoadScene("Loading");
+        }
     }
 
     // Reload current scene
