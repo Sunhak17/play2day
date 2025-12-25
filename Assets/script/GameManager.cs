@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI winnerText;
     public GameObject goldenGoalPanel;
     public TextMeshProUGUI goldenGoalText;
+    public GameObject pauseMenuPanel;
 
     [Header("Golden Goal Settings")]
     public bool goldenGoalMode = false;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private bool gameEnded = false;
     private bool isGoldenGoal = false;
+    private bool isPaused = false;
 
     void Awake()
     {
@@ -35,6 +37,9 @@ public class GameManager : MonoBehaviour
         if (goldenGoalPanel != null)
             goldenGoalPanel.SetActive(false);
 
+        if (pauseMenuPanel != null)
+            pauseMenuPanel.SetActive(false);
+
         // Check if this is golden goal mode
         if (goldenGoalMode)
         {
@@ -44,6 +49,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // Check for ESC key to toggle pause
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameEnded)
+        {
+            TogglePause();
+        }
+
         // Check if time is up
         time timeScript = FindObjectOfType<time>();
         if (timeScript != null && timeScript.GetTimeRemaining() <= 0 && !gameEnded)
@@ -219,11 +230,27 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f;
+        isPaused = true;
+        if (pauseMenuPanel != null)
+            pauseMenuPanel.SetActive(true);
+        Debug.Log("Game Paused");
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        isPaused = false;
+        if (pauseMenuPanel != null)
+            pauseMenuPanel.SetActive(false);
+        Debug.Log("Game Resumed");
+    }
+
+    public void TogglePause()
+    {
+        if (isPaused)
+            ResumeGame();
+        else
+            PauseGame();
     }
 
     public void QuitGame()
