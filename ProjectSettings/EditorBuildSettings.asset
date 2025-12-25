@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Welcome.unity
     guid: 35cc2e2a697ea654bb818e953924b6ae
   - enabled: 1
+    path: Assets/Scenes/AboutUs.unity
+    guid: a8f6e929e58af7a4dac7929f347f6f7c
+  - enabled: 1
     path: Assets/Scenes/Team_selection.unity
     guid: ae1fb1ffbc4900d47b8b9e8ed2c187e7
   - enabled: 1

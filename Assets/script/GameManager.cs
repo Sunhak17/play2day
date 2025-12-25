@@ -120,6 +120,12 @@ public class GameManager : MonoBehaviour
         GameResult.instance.SetMatchResult(playerScore, aiScore, winner, isGoldenGoal);
         Debug.Log($"Verified GameResult has scores: Player {GameResult.instance.playerScore}, AI {GameResult.instance.aiScore}");
 
+        // Play pre-game audio when game ends (whistle/end sound)
+        if (GameAudioManager.instance != null)
+        {
+            GameAudioManager.instance.PlayPreGameAudio();
+        }
+
         // Go directly to After-Match scene after 2 seconds
         Debug.Log("Game ended! Going to After-Match scene...");
         Invoke("GoToAfterMatch", 2f);

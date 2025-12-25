@@ -6,6 +6,7 @@ public class time : MonoBehaviour
     public float gameTime = 90f;
     private float currentTime;
     private TextMeshProUGUI timeText;
+    private bool isPaused = false;
 
     void Start()
     {
@@ -15,7 +16,7 @@ public class time : MonoBehaviour
 
     void Update()
     {
-        if (currentTime > 0)
+        if (!isPaused && currentTime > 0)
         {
             currentTime -= Time.deltaTime;
             if (currentTime < 0)
@@ -40,5 +41,15 @@ public class time : MonoBehaviour
     {
         gameTime = newTime;
         currentTime = newTime;
+    }
+
+    public void PauseTimer()
+    {
+        isPaused = true;
+    }
+
+    public void ResumeTimer()
+    {
+        isPaused = false;
     }
 }

@@ -21,6 +21,19 @@ public class GoalDetection : MonoBehaviour
     {
         isProcessingGoal = true;
 
+        // IMMEDIATELY play goal audio (no delay)
+        if (GameAudioManager.instance != null)
+        {
+            GameAudioManager.instance.PlayGoalAudio();
+        }
+
+        // Pause the game timer for 3 seconds
+        time timeScript = FindObjectOfType<time>();
+        if (timeScript != null)
+        {
+            timeScript.PauseTimer();
+        }
+
         // Stop the ball
         Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
         if (ballRb != null)
@@ -55,8 +68,14 @@ public class GoalDetection : MonoBehaviour
             goalAnimation.SetActive(true);
         }
 
-        // Wait for animation duration
-        yield return new WaitForSeconds(animationDuration);
+        // Wait for 3 seconds (goal celebration time)
+        yield return new WaitForSeconds(3f);
+
+        // Resume the game timer
+        if (timeScript != null)
+        {
+            timeScript.ResumeTimer();
+        }
 
         // Hide goal animation
         if (goalAnimation != null)

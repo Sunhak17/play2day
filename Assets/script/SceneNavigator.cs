@@ -48,6 +48,19 @@ public class SceneNavigator : MonoBehaviour
         }
     }
 
+    public void LoadAboutUs()
+    {
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
+        {
+            SceneManager.LoadScene("AboutUs");
+        }
+        else
+        {
+            PlayerPrefs.SetString("TargetScene", "AboutUs");
+            SceneManager.LoadScene("AboutUs");
+        }
+    }
+
     public void LoadChoose()
     {
         if (PlayerPrefs.GetInt("GameStarted", 0) == 1)

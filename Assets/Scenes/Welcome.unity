@@ -302,8 +302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286.4, y: -72}
-  m_SizeDelta: {x: 427.2046, y: 101.708}
+  m_AnchoredPosition: {x: -310.77625, y: -50.854004}
+  m_SizeDelta: {x: 378.4526, y: 101.708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1136257090
 MonoBehaviour:
@@ -961,8 +961,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -298.52, y: -197.84058}
-  m_SizeDelta: {x: 402.9654, y: 121.5228}
+  m_AnchoredPosition: {x: -310.78, y: -187}
+  m_SizeDelta: {x: 378.45, y: 121.5228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1742218286
 MonoBehaviour:
@@ -1026,9 +1026,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2033741862}
-        m_TargetAssemblyTypeName: WelcomeMenuCarousel, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 2033741863}
+        m_TargetAssemblyTypeName: SceneNavigator, Assembly-CSharp
+        m_MethodName: LoadAboutUs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1488,8 +1488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -268, y: 67.483}
-  m_SizeDelta: {x: 511.8657, y: 177.2581}
+  m_AnchoredPosition: {x: -266.712, y: 91}
+  m_SizeDelta: {x: 466.5865, y: 141.522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126132347
 MonoBehaviour:
