@@ -31,7 +31,7 @@ public class SceneNavigator : MonoBehaviour
         else
         {
             PlayerPrefs.SetString("TargetScene", "Welcome");
-            SceneManager.LoadScene("Loading");
+            SceneManager.LoadScene("Welcome");
         }
     }
 
@@ -44,7 +44,7 @@ public class SceneNavigator : MonoBehaviour
         else
         {
             PlayerPrefs.SetString("TargetScene", "Setting");
-            SceneManager.LoadScene("Loading");
+            SceneManager.LoadScene("Setting");
         }
     }
 
@@ -61,6 +61,20 @@ public class SceneNavigator : MonoBehaviour
         }
     }
 
+    public void LoadCPL()
+    {
+        if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
+        {
+            SceneManager.LoadScene("CPL");
+        }
+        else
+        {
+            PlayerPrefs.SetString("TargetScene", "CPL");
+            SceneManager.LoadScene("CPL");
+        }
+    }
+
+
     public void LoadChoose()
     {
         if (PlayerPrefs.GetInt("GameStarted", 0) == 1)
@@ -70,7 +84,7 @@ public class SceneNavigator : MonoBehaviour
         else
         {
             PlayerPrefs.SetString("TargetScene", "Team_selection");
-            SceneManager.LoadScene("Loading");
+            SceneManager.LoadScene("Team_selection");
         }
     }
 
@@ -83,7 +97,7 @@ public class SceneNavigator : MonoBehaviour
         else
         {
             PlayerPrefs.SetString("TargetScene", "Choose_Customization");
-            SceneManager.LoadScene("Loading");
+            SceneManager.LoadScene("Choose_Customization");
         }
     }
 
@@ -96,7 +110,7 @@ public class SceneNavigator : MonoBehaviour
         else
         {
             PlayerPrefs.SetString("TargetScene", "GamePlay");
-            SceneManager.LoadScene("Loading");
+            SceneManager.LoadScene("GamePlay");
         }
     }
 
@@ -109,7 +123,7 @@ public class SceneNavigator : MonoBehaviour
         else
         {
             PlayerPrefs.SetString("TargetScene", "After-Match");
-            SceneManager.LoadScene("Loading");
+            SceneManager.LoadScene("After-Match");
         }
     }
 

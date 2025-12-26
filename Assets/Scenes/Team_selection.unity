@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.7646306, y: -68.1}
-  m_SizeDelta: {x: 207.4094, y: 37.7982}
+  m_AnchoredPosition: {x: 6.4953, y: -83}
+  m_SizeDelta: {x: 189.1109, y: 37.7982}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3493414
 MonoBehaviour:
@@ -181,8 +181,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Angkor Tiger
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f519705ebd1780a40a8acd61497a7375, type: 2}
+  m_sharedMaterial: {fileID: 8940827074952772817, guid: f519705ebd1780a40a8acd61497a7375, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -206,8 +206,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -295,8 +295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -295, y: 24}
-  m_SizeDelta: {x: 278.4164, y: 352.2318}
+  m_AnchoredPosition: {x: -333, y: -0.97341}
+  m_SizeDelta: {x: 278.4164, y: 501.9468}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27409432
 MonoBehaviour:
@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 66808800}
   - component: {fileID: 66808799}
   - component: {fileID: 66808801}
+  - component: {fileID: 66808802}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -396,6 +397,102 @@ MonoBehaviour:
   playerTeamSelector: {fileID: 1503510060}
   aiTeamSelector: {fileID: 628684881}
   nextSceneName: Choose_Customization
+--- !u!82 &66808802
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66808798}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6e689e68d632dd642a4e545c84b2506c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &82469794
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -43, y: -100.42}
+  m_AnchoredPosition: {x: -43, y: -142}
   m_SizeDelta: {x: 55.0744, y: 51.5725}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82469796
@@ -675,7 +772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -102, y: -175.98}
+  m_AnchoredPosition: {x: -94, y: -139}
   m_SizeDelta: {x: 152.0773, y: 109.0229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &148392818
@@ -887,7 +984,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95, y: -175.98}
+  m_AnchoredPosition: {x: 99, y: -139}
   m_SizeDelta: {x: 148.9382, y: 124.1056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525544712
@@ -1182,7 +1279,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23.3, y: 112}
+  m_AnchoredPosition: {x: 23.3, y: 172}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599235554
@@ -1207,8 +1304,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Select Your Team
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f519705ebd1780a40a8acd61497a7375, type: 2}
+  m_sharedMaterial: {fileID: 8940827074952772817, guid: f519705ebd1780a40a8acd61497a7375, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1232,8 +1329,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 23
+  m_fontSizeBase: 23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1544,8 +1641,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Angkor Tiger
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f519705ebd1780a40a8acd61497a7375, type: 2}
+  m_sharedMaterial: {fileID: 8940827074952772817, guid: f519705ebd1780a40a8acd61497a7375, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1569,8 +1666,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1635,8 +1732,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.7646, y: -67.95071}
-  m_SizeDelta: {x: 207.4094, y: 37.7982}
+  m_AnchoredPosition: {x: 1.019, y: -86}
+  m_SizeDelta: {x: 187.4474, y: 37.7982}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &830162682
 GameObject:
@@ -1674,7 +1771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.6, y: -103}
+  m_AnchoredPosition: {x: 45.6, y: -150}
   m_SizeDelta: {x: 55.0742, y: 50.741}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &830162684
@@ -1825,7 +1922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41, y: -101.62}
+  m_AnchoredPosition: {x: -41, y: -150}
   m_SizeDelta: {x: 53.8235, y: 50.3216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &902045772
@@ -2047,8 +2144,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 304, y: 24}
-  m_SizeDelta: {x: 278.4164, y: 352.2318}
+  m_AnchoredPosition: {x: 341, y: -3.4686}
+  m_SizeDelta: {x: 278.4164, y: 506.9372}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300813121
 MonoBehaviour:
@@ -2124,7 +2221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42.8, y: -102.6}
+  m_AnchoredPosition: {x: 42.8, y: -146}
   m_SizeDelta: {x: 53.8232, y: 54.073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443099935
@@ -2276,7 +2373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000011325, y: 28}
+  m_AnchoredPosition: {x: -0.000011325, y: 46}
   m_SizeDelta: {x: 101.5782, y: 98.8359}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503510056
@@ -2495,7 +2592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: 112.00003}
+  m_AnchoredPosition: {x: 12, y: 172}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1874466300
@@ -2520,8 +2617,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Select Computer Team
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f519705ebd1780a40a8acd61497a7375, type: 2}
+  m_sharedMaterial: {fileID: 8940827074952772817, guid: f519705ebd1780a40a8acd61497a7375, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2545,8 +2642,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2811,7 +2908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.536, y: 179}
+  m_AnchoredPosition: {x: 0.0000095367, y: 149}
   m_SizeDelta: {x: 125.0182, y: 125.0182}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2124615273

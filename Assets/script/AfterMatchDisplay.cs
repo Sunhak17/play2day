@@ -104,15 +104,15 @@ public class AfterMatchDisplay : MonoBehaviour
             }
             else if (winner == "Player")
             {
-                resultText.text = "Victory!\nYou Win!";
+                resultText.text = "Victory!";
             }
             else if (winner == "AI")
             {
-                resultText.text = "Defeat!\nAI Wins!";
+                resultText.text = "Defeat!";
             }
             else
             {
-                resultText.text = "Draw!\nNo Winner";
+                resultText.text = "Draw!";
             }
         }
 
