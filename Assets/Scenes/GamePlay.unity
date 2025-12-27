@@ -494,9 +494,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0, y: 0.22583333}
+  m_Offset: {x: -0, y: 0.102244295}
   serializedVersion: 2
-  m_Radius: 1.6330705
+  m_Radius: 1.5309774
 --- !u!212 &244308301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1441,6 +1441,9 @@ MonoBehaviour:
   preGameAudio: {fileID: 8300000, guid: e5b5fa5a9021a9746830ce8650ba1a75, type: 3}
   goalAudio: {fileID: 8300000, guid: 50cace326c7961e4d9d13c394ec25eed, type: 3}
   backgroundFanAudio: {fileID: 8300000, guid: 89ebd15df10a39a489598156b971c03b, type: 3}
+  clickAudio: {fileID: 0}
+  sfxEnabled: 1
+  clickEnabled: 1
   sfxVolume: 0.522
   ambientVolume: 0.4
 --- !u!4 &584942817
@@ -5529,9 +5532,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0, y: 0.22583333}
+  m_Offset: {x: 0, y: -0.11867484}
   serializedVersion: 2
-  m_Radius: 1.6330705
+  m_Radius: 1.3484832
 --- !u!212 &1822219605
 SpriteRenderer:
   m_ObjectHideFlags: 0
