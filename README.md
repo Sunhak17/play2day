@@ -1,5 +1,3 @@
-
-
 # Play2Day: Cambodia Premier League Soccer
 
 ## About the Project
