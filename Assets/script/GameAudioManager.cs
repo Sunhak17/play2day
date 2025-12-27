@@ -23,6 +23,11 @@ public class GameAudioManager : MonoBehaviour
     private AudioSource sfxSource;      // For one-shot sounds (pre-game, goal)
     private AudioSource ambientSource;  // For looping fan audio
 
+    [Header("Click / Toggles")]
+    public AudioClip clickAudio;
+    public bool sfxEnabled = true;
+    public bool clickEnabled = true;
+
     [Header("Settings")]
     [Range(0f, 1f)]
     public float sfxVolume = 0.8f;
@@ -50,6 +55,15 @@ public class GameAudioManager : MonoBehaviour
         ambientSource.playOnAwake = false;
         ambientSource.loop = true;
         ambientSource.volume = ambientVolume;
+
+        // Load SFX and click enabled state
+        sfxEnabled = PlayerPrefs.GetInt("SFXOn", 1) == 1;
+        clickEnabled = PlayerPrefs.GetInt("ClickOn", 1) == 1;
+
+        sfxSource.mute = !sfxEnabled;
+        ambientSource.mute = !sfxEnabled;
+        if (!sfxEnabled)
+            StopBackgroundFanAudio();
     }
 
     void Start()
@@ -66,6 +80,9 @@ public class GameAudioManager : MonoBehaviour
     /// </summary>
     public void PlayPreGameAudio()
     {
+        if (!sfxEnabled)
+            return;
+
         if (preGameAudio != null && sfxSource != null)
         {
             sfxSource.PlayOneShot(preGameAudio, sfxVolume);
@@ -82,6 +99,9 @@ public class GameAudioManager : MonoBehaviour
     /// </summary>
     public void PlayGoalAudio()
     {
+        if (!sfxEnabled)
+            return;
+
         if (goalAudio != null && sfxSource != null)
         {
             // Stop any currently playing goal audio
@@ -121,6 +141,9 @@ public class GameAudioManager : MonoBehaviour
     /// </summary>
     public void PlayBackgroundFanAudio()
     {
+        if (!sfxEnabled)
+            return;
+
         if (backgroundFanAudio != null && ambientSource != null)
         {
             ambientSource.clip = backgroundFanAudio;
@@ -130,6 +153,45 @@ public class GameAudioManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Background fan audio clip is not assigned!");
+        }
+    }
+
+    /// <summary>
+    /// Enable or disable all SFX/ambient audio
+    /// </summary>
+    public void SetSFXEnabled(bool enabled)
+    {
+        sfxEnabled = enabled;
+        if (sfxSource != null)
+            sfxSource.mute = !enabled;
+        if (ambientSource != null)
+        {
+            ambientSource.mute = !enabled;
+            if (!enabled)
+                StopBackgroundFanAudio();
+            else
+                PlayBackgroundFanAudio();
+        }
+        PlayerPrefs.SetInt("SFXOn", enabled ? 1 : 0);
+    }
+
+    /// <summary>
+    /// Enable or disable click sound playback
+    /// </summary>
+    public void SetClickEnabled(bool enabled)
+    {
+        clickEnabled = enabled;
+        PlayerPrefs.SetInt("ClickOn", enabled ? 1 : 0);
+    }
+
+    /// <summary>
+    /// Play a UI click sound (if enabled)
+    /// </summary>
+    public void PlayClick()
+    {
+        if (clickAudio != null && sfxSource != null && sfxEnabled && clickEnabled)
+        {
+            sfxSource.PlayOneShot(clickAudio, sfxVolume);
         }
     }
 
