@@ -40,6 +40,14 @@ public class GameManager : MonoBehaviour
         if (pauseMenuPanel != null)
             pauseMenuPanel.SetActive(false);
 
+        // Mute background music during gameplay (fan sound plays instead)
+        MusicManager mm = FindObjectOfType<MusicManager>();
+        if (mm != null && mm.musicSource != null)
+        {
+            mm.musicSource.Pause(); // Pause instead of stop to resume later
+            Debug.Log("Background music paused for gameplay");
+        }
+
         // Check if this is golden goal mode
         if (goldenGoalMode)
         {
@@ -257,5 +265,19 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Game Quit");
+    }
+
+    void OnDestroy()
+    {
+        // Resume background music when leaving gameplay scene
+        MusicManager mm = FindObjectOfType<MusicManager>();
+        if (mm != null && mm.musicSource != null && mm.musicEnabled)
+        {
+            if (!mm.musicSource.isPlaying)
+            {
+                mm.musicSource.UnPause(); // Resume from where it was paused
+                Debug.Log("Background music resumed after gameplay");
+            }
+        }
     }
 }

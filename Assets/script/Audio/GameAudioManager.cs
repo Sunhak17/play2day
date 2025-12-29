@@ -45,6 +45,32 @@ public class GameAudioManager : MonoBehaviour
         }
         instance = this;
 
+        // Initialize defaults if first time running
+        if (!PlayerPrefs.HasKey("SFXVolume"))
+        {
+            PlayerPrefs.SetFloat("SFXVolume", 0.8f);
+            PlayerPrefs.Save();
+        }
+        if (!PlayerPrefs.HasKey("AmbientVolume"))
+        {
+            PlayerPrefs.SetFloat("AmbientVolume", 0.4f);
+            PlayerPrefs.Save();
+        }
+        if (!PlayerPrefs.HasKey("SFXOn"))
+        {
+            PlayerPrefs.SetInt("SFXOn", 1); // Default ON
+            PlayerPrefs.Save();
+        }
+        if (!PlayerPrefs.HasKey("ClickOn"))
+        {
+            PlayerPrefs.SetInt("ClickOn", 1); // Default ON
+            PlayerPrefs.Save();
+        }
+
+        // Load saved volumes (default to reasonable values)
+        sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 0.8f);
+        ambientVolume = PlayerPrefs.GetFloat("AmbientVolume", 0.4f);
+
         // Create two AudioSource components
         sfxSource = gameObject.AddComponent<AudioSource>();
         sfxSource.playOnAwake = false;
@@ -56,14 +82,18 @@ public class GameAudioManager : MonoBehaviour
         ambientSource.loop = true;
         ambientSource.volume = ambientVolume;
 
-        // Load SFX and click enabled state
+        // Load SFX and click enabled state (default to true)
         sfxEnabled = PlayerPrefs.GetInt("SFXOn", 1) == 1;
         clickEnabled = PlayerPrefs.GetInt("ClickOn", 1) == 1;
 
+        // Only mute if explicitly disabled
         sfxSource.mute = !sfxEnabled;
         ambientSource.mute = !sfxEnabled;
+        
         if (!sfxEnabled)
             StopBackgroundFanAudio();
+            
+        Debug.Log($"GameAudioManager initialized - SFX Enabled: {sfxEnabled}, Volume: {sfxVolume}");
     }
 
     void Start()
@@ -173,6 +203,7 @@ public class GameAudioManager : MonoBehaviour
                 PlayBackgroundFanAudio();
         }
         PlayerPrefs.SetInt("SFXOn", enabled ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     /// <summary>
@@ -182,6 +213,7 @@ public class GameAudioManager : MonoBehaviour
     {
         clickEnabled = enabled;
         PlayerPrefs.SetInt("ClickOn", enabled ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     /// <summary>
@@ -215,6 +247,8 @@ public class GameAudioManager : MonoBehaviour
         sfxVolume = Mathf.Clamp01(volume);
         if (sfxSource != null)
             sfxSource.volume = sfxVolume;
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        PlayerPrefs.Save();
     }
 
     /// <summary>
@@ -225,6 +259,8 @@ public class GameAudioManager : MonoBehaviour
         ambientVolume = Mathf.Clamp01(volume);
         if (ambientSource != null)
             ambientSource.volume = ambientVolume;
+        PlayerPrefs.SetFloat("AmbientVolume", ambientVolume);
+        PlayerPrefs.Save();
     }
 
     void OnDestroy()
