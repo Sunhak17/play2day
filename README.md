@@ -166,5 +166,10 @@ The following audio files are included in `Assets/audio/`:
 
 ---
 
+## Resources
+- [Google Drive Folder](https://drive.google.com/drive/folders/1Mj7DvbWbMJB5EHDJZQ7K9pvSWtFy15QV)
+
+---
+
 ## License
 This project is developed for educational purposes at CADT (Cambodia Academy of Digital Technology).
